@@ -1,0 +1,82 @@
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    position: relative;
+    background-color: dimgrey;
+    background-image: url(../images/bg.png);
+    background-size: cover;
+}
+
+header, footer {
+    padding: 25px;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+section {
+    margin: 100px 0;
+}
+
+footer {
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 60px;
+    left: 25%;
+    right: 25%;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    background-size: cover;
+    background-image: url(../images/swords.svg);
+    z-index: 1;
+}
+
+h1, h2 {
+    position: relative;
+    color: cornsilk;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #222;
+    z-index: 2;
+}
+
+h1 {
+    margin: 40px 0;
+    font-size: 6em;
+    color: darkred;
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 5em;
+    color: orangered;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 4em;
+    color: darkgoldenrod;
+}
+
+p {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1em;
+    color: #eee;
+}
+
+a {
+    text-decoration: none;
+    color: darkgoldenrod;
+}
+
+a:hover {
+    color: orangered;
+}
