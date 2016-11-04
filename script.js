@@ -27,10 +27,13 @@
 };*/
 
 var Perso = {
-    name: "",
-    life: 0,
-    force: 0,
-    xp: 0,
+    // fonction d'initalisation de l'objet - ici l'xp sera forcément de 0 pour tout nouveau perso
+    init: function (name, life, force) {
+        this.name = name;
+        this.life = life;
+        this.force = force;
+        this.xp = 0;
+    },
 
     // Renvoie la description du personnage
     describe: function () {
@@ -40,7 +43,9 @@ var Perso = {
     }
 };
 
-var perso1 = Object.create(Perso);
+
+// ancienne façon de créer nos perso quand on avait de init:
+/*var perso1 = Object.create(Perso);
 perso1.nom = "Aurora";
 perso1.sante = 150;
 perso1.force = 25;
@@ -48,7 +53,15 @@ perso1.force = 25;
 var perso2 = Object.create(Perso);
 perso2.nom = "Glacius";
 perso2.sante = 130;
-perso2.force = 35;
+perso2.force = 35;*/
+
+// nouvelle façon de créer nos perso avec init:
+var perso1 = Object.create(Perso);
+perso1.init("Aurora", 150, 25);
+
+var perso2 = Object.create(Perso);
+perso2.init("Glacius", 130, 30);
+
 
 console.log(perso1.describe());
 console.log(perso2.describe());
