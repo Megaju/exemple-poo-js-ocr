@@ -17,7 +17,7 @@
     force: 25
   };
   
-## Fonction dans un objet
+## Fonction dans un objet : les méthodes
 
 > describe: function () {
         var description = this.name + " a " + this.life + " points de vie et a une force de " + this.force + ".";
