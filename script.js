@@ -26,6 +26,18 @@
     }
 };*/
 
+var stylo = {
+    color: "rouge",
+    marque: "BIC",
+    dps: 999,
+    
+    // description du stylo
+    describe: function () {
+        var description = "C'est un stylo " + stylo.color + " de la marque " + stylo.marque + " et il a " + stylo.dps + " de DPS !";
+        return description;
+    }
+}
+
 var Perso = {
     // fonction d'initalisation de l'objet
     init: function (name, life, force) {
@@ -74,3 +86,6 @@ perso1.life = perso1.life - 20;
 perso1.force = perso1.force + 10;
 
 console.log(perso1.describe());
+
+// Description du stylo
+console.log(stylo.describe());
