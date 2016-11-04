@@ -41,7 +41,7 @@ var stylo = {
 
 // Objet personnage
 var Perso = {
-    // fonction d'initalisation de l'objet
+    // INITIALISATION : fonction d'initalisation de l'objet
     initPerso: function (name, life, force) {
         this.name = name;
         this.life = life;
@@ -49,11 +49,30 @@ var Perso = {
         this.xp = 0; // ici l'xp sera forcément de 0 pour tout nouveau perso
     },
 
-    // Renvoie la description du personnage
+    // DESCRIPTION : Renvoie la description du personnage
     describe: function () {
         var description = this.name + " a " + this.life + " points de vie, " +
             this.force + " en force et " + this.xp + " points d'expérience";
         return description;
+    },
+    
+    // ATTACK : Fonction pour que notre personnage puisse attaquer
+    attack : function (cible) {
+        if (this.life > 0) {
+            var degats = this.force;
+            console.log(this.name + " attaque " + cible.name + " et lui cause " + degats + " points de dégâts !");
+            cible.life = cible.life - degats;
+            
+            // on vérifie si la cible est morte
+            if (cible.life > 0) {
+                console.log(cible.name + " a encore " + cible.life + " points de vie.");
+            } else {
+                console.log(cible.name + " meurt !");
+            }
+            
+        } else {
+            console.log(this.name + " est mort !");
+        }
     }
 };
 
@@ -110,3 +129,5 @@ console.log("Un " + zogzog.race + " ignoble du nom de " + zogzog.name + " viens 
 // Arme de l'orc
 console.log("En plus il est armé d'un incroyable stylo " + stylo.color + " de la marque " + stylo.marque + " !");
 
+// la perso1 va attaquer zogzog
+perso1.attack(zogzog);
