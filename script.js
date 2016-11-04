@@ -3,10 +3,25 @@ var perso = {
     name: "Aurora",
     life: 150,
     force: 25,
+    xp: 0,
     
     // renvoie la description du personnage
     describe: function () {
-        var description = this.name + " a " + this.life + " points de vie et a une force de " + this.force + ".";
+        var description = this.name + " a " + this.life + " points de vie et a une force de " + this.force + " et possède " + this.xp + " d'expérience.";
+        return description;
+    }
+};
+
+// compagnon d'Aurora
+var perso2 = {
+    nom: "Glacius",
+    sante: 130,
+    force: 30,
+    xp: 0,
+
+    // renvoie la description du personnage
+    describe: function () {
+        var description = this.name + " a " + this.life + " points de vie et a une force de " + this.force + " et possède " + this.xp + " d'expérience.";
         return description;
     }
 };
