@@ -130,4 +130,13 @@ console.log("Un " + zogzog.race + " ignoble du nom de " + zogzog.name + " viens 
 console.log("En plus il est armé d'un incroyable stylo " + stylo.color + " de la marque " + stylo.marque + " !");
 
 // la perso1 va attaquer zogzog
-perso1.attack(zogzog);
+Perso.fight = function (Monster) {
+    this.attack(Monster);
+    if (Monster.sante === 0) {
+        console.log(this.name + " a tué " + Monster.naem + " et gagne " +
+            Monster.value + " points d'expérience");
+        this.xp += Monster.value;
+    }
+}
+
+perso1.fight(zogzog);
