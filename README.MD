@@ -29,3 +29,18 @@
 > Observez maintenant le corps de la méthode *decrire()* de notre objet *perso*. Un nouveau mot-clé y apparaît : *this*. Il est défini automatiquement par JavaScript à l'intérieur d'une méthode et représente l'objet sur lequel la méthode a été appelée.
 
 > La méthode *decrire()* ne prend plus de personnage en paramètre : elle utilise *this* pour accéder aux propriétés de l'objet sur lequel elle a été appelée.
+
+## Les prototypes
+
+> Pour créer des modèles d'objet en JavaScript, on utilise les prototypes. En plus ses propriétés particulières, tout objet JavaScript possède une propriété interne appelée prototype. Il s'agit d'un lien (on parle de référence) vers un autre objet. Lorsqu'on essaie d'accéder à une propriété qui n'existe pas dans un objet, JavaScript essaie de trouver cette propriété dans le prototype de cet objet.
+
+* Voici un exemple illustrant ce fonctionnement.
+
+_var unObjet = {
+    a: 2
+};
+
+// Crée unAutreObjet avec unObjet comme prototype
+var unAutreObjet = Object.create(unObjet);
+
+console.log(unAutreObjet.a); // Affiche 2_ 
