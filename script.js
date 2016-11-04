@@ -121,7 +121,7 @@ console.log(stylo.describe());
 
 // Création d'un 1er ennemie !
 var zogzog = Object.create(Monster);
-zogzog.initMonster("Zogzog", 40, 20, "Orc", 10);
+zogzog.initMonster("Zogzog", 40, stylo.dps, "Orc", 10);
 
 // Description du monstre
 console.log("Un " + zogzog.race + " ignoble du nom de " + zogzog.name + " viens d\'apparaitre !");
@@ -140,3 +140,4 @@ Perso.fight = function (Monster) {
 }
 
 perso1.fight(zogzog);
+zogzog.fight(perso1);
