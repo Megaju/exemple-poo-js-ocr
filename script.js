@@ -26,6 +26,7 @@
     }
 };*/
 
+// Objet tout simple : un stylo
 var stylo = {
     color: "rouge",
     marque: "BIC",
@@ -38,9 +39,10 @@ var stylo = {
     }
 }
 
+// Objet personnage
 var Perso = {
     // fonction d'initalisation de l'objet
-    init: function (name, life, force) {
+    initPerso: function (name, life, force) {
         this.name = name;
         this.life = life;
         this.force = force;
@@ -55,6 +57,14 @@ var Perso = {
     }
 };
 
+// Objet adversaire
+var Monster = Object.create(Perso);
+Monster.initMonster = function(name, life, force, race, value) {
+    this.initPerso(name, life, force);
+    this.race = race;
+    this.value = value;
+}
+
 // ancienne façon de créer nos perso quand on avait de init:
 /*var perso1 = Object.create(Perso);
 perso1.nom = "Aurora";
@@ -68,10 +78,10 @@ perso2.force = 35;*/
 
 // nouvelle façon de créer nos perso avec init:
 var perso1 = Object.create(Perso);
-perso1.init("Aurora", 150, 25);
+perso1.initPerso("Aurora", 150, 25);
 
 var perso2 = Object.create(Perso);
-perso2.init("Glacius", 130, 30);
+perso2.initPerso("Glacius", 130, 30);
 
 
 console.log(perso1.describe());
@@ -89,3 +99,14 @@ console.log(perso1.describe());
 
 // Description du stylo
 console.log(stylo.describe());
+
+// Création d'un 1er ennemie !
+var zogzog = Object.create(Monster);
+zogzog.initMonster("Zogzog", 40, 20, "Orc", 10);
+
+// Description du monstre
+console.log("Un " + zogzog.race + " ignoble du nom de " + zogzog.name + " viens d\'apparaitre !");
+
+// Arme de l'orc
+console.log("En plus il est armé d'un incroyable stylo " + stylo.color + " de la marque " + stylo.marque + " !");
+
